@@ -1,0 +1,56 @@
+.navbtn {
+    color: rgb(250, 250, 250);
+    font-size: 1.0rem;
+    margin-top: -0.1rem;
+    font-weight: bold;
+    background-color: #F68D16;
+    border-color: #F68D16;
+    border-radius: 0.3rem;
+    height: 2.2rem;
+    width: 12rem;
+    padding-bottom: 2px;
+    border-style: solid;
+}
+
+.navbtn:hover {
+    border-color: #EF5E1B;
+    background-color: rgb(250, 250, 250);
+    color: #EF5E1B;
+}
+
+.login {
+    font-size: 19px;
+}
+
+.logout {
+    margin-top: -3px;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 40px;
+}
+
+.admin-icon {
+    margin-left: -3px;
+}
+
+.profile-icon {
+    margin-left: -4px;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute;
+        margin-top: 63.9px;
+        background-color: rgba(255, 255, 255, 0.979);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 100%;
+        margin-left: calc(-100vw + 72px);
+    }
+}

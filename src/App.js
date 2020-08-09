@@ -1,9 +1,13 @@
 import React from 'react';
-import './App.css';
+import './bootstrap.css';
+import Navigation from './components/navigation';
 
 const App = () => {
   return (
-    <h1>Bookshare react client!</h1>
+    <div className="App">
+      <Navigation/>
+      <h1>Bookshare react client!</h1>
+    </div>
   );
 }
 
