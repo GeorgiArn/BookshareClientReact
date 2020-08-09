@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.template{
+    width: 100%;
+    height: 90vh;
+    z-index: -1;
+}
+
+.search-text {
+    color: rgb(206, 112, 5);
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.search-engine-box {
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 2%;
+    position: relative;
+    margin-top: -70vh;
+    height: 120px;
+}
