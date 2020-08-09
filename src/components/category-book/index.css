@@ -1,0 +1,18 @@
+.category-book {
+    height: 480px;
+}
+
+.category-item {
+    position: absolute;
+    bottom: 0;
+}
+
+.category-book-title {
+    color: rgb(206, 112, 5);
+}
+
+@media (max-width: 576px) {
+    .category-book {
+        height: unset;
+    }
+}

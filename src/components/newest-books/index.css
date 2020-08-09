@@ -1,0 +1,13 @@
+.newest-books {
+    top: 65vh;
+}
+
+.newest-books-title {
+    color: rgb(206, 112, 5);
+}
+
+@media (max-width: 576px) {
+    .newest-books {
+        margin-bottom: 100px;
+    }
+}

@@ -8,7 +8,7 @@ const Navigation = () => {
             <div className="row container-fluid">
                 <div>
                     <a className="navbar-brand"><img src={logo}
-                        className="img-thumbnail float-left" /></a>
+                        className="img-thumbnail float-left" alt="bookshare-logo" href="/"/></a>
                 </div>
                 <div className="nav-icons">
                     <button className="navbar-toggler float-right" type="button" data-toggle="collapse"
@@ -25,10 +25,10 @@ const Navigation = () => {
                         {/* Notifications 
                         ----- */}
                             <li className="nav-item">
-                                <a className="nav-link px-4 text-dark login">Влез</a>
+                                <a className="nav-link px-4 text-dark login" href="/">Влез</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-item nav-link"><button className="navbtn">Регистрирай
+                                <a className="nav-item nav-link" href="/"><button className="navbtn">Регистрирай
                                     се</button></a>
                             </li>
                             {/* <li class="nav-item">

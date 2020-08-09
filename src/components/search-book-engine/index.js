@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './index.css'
-import { render } from '@testing-library/react';
+import SearchBookEngineResult from '../search-book-engine-result';
 
 class SearchBookEngine extends Component {
 
@@ -30,11 +30,7 @@ class SearchBookEngine extends Component {
 
         return books.map(book => {
             return (
-                <div className="book" key={book.id}>
-                    <img src={book.imageURL} />
-                    <p className="book-title">{book.title}</p>
-                    <p className="book-author">Автор: {book.author}</p>
-                </div>
+                <SearchBookEngineResult key={book.id} {...book} />   
             )
         })
     }
