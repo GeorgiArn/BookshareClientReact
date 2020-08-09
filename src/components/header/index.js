@@ -1,14 +1,15 @@
 import React from 'react'
 import './index.css'
 import logo from '../../images/logo.png'
+import { Link } from 'react-router-dom';
 
-const Navigation = () => {
+const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow">
             <div className="row container-fluid">
                 <div>
-                    <a className="navbar-brand"><img src={logo}
-                        className="img-thumbnail float-left" alt="bookshare-logo" href="/"/></a>
+                <Link to="/"><a className="navbar-brand"><img src={logo}
+                        className="img-thumbnail float-left" alt="bookshare-logo" href="/"/></a></Link>
                 </div>
                 <div className="nav-icons">
                     <button className="navbar-toggler float-right" type="button" data-toggle="collapse"
@@ -43,4 +44,4 @@ const Navigation = () => {
     );
 }
 
-export default Navigation;
+export default Header;

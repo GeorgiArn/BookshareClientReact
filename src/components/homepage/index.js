@@ -4,12 +4,11 @@ import template from '../../images/template.jpg'
 import SearchBookEngine from '../search-book-engine'
 import NewestBooks from '../newest-books'
 import MostExchangedBooks from '../most-exchanged-books'
-import Navigation from '../navigation'
+import Header from '../header'
 
 const Homepage = () => {
     return (
         <div id="homepage">
-            <Navigation/>
             <img src={template} className="img-fluid template" alt="bookshare-template"/>
             <div className="row">
                 <div className="col-md-4 col-xs-2 col-sm-2"></div>

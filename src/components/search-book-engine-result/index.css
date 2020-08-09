@@ -1,18 +1,18 @@
 
-.book-title {
+.search-book-title {
     white-space: normal;
     margin-left: 15px;
     font-weight: 600;
     font-size: 14px;
 }
 
-.book-author {
+.search-book-author {
     margin-left: 5px;
     margin-top: -15px;
     font-size: 13px;
 }
 
-.book img {
+.search-book img {
     width: 60px;
     height: 80px;
     float: left;
@@ -20,13 +20,17 @@
     padding: 2px;
 }
 
-.book {
+.search-book {
     overflow: hidden;
     z-index: 1;
     cursor: pointer;
 }
 
-.book:hover{
+.search-book:hover{
     background-color: whitesmoke;
     border-color: whitesmoke;
+}
+
+a:hover {
+    text-decoration: none;
 }
