@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import Book from './components/book'
+import Book from './pages/book'
 import Header from './components/header'
 import Context from './Context'
 import Homepage from './pages/homepage'
