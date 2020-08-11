@@ -1,47 +1,54 @@
-import React from 'react'
+import React, { useContext, Component } from 'react'
 import './index.css'
 import logo from '../../images/logo.png'
-import { Link } from 'react-router-dom';
+import logout from '../../images/logout.png'
+import { Link } from 'react-router-dom'
+import Context from '../../Context'
 
-const Header = () => {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow">
-            <div className="row container-fluid">
-                <div>
-                <Link to="/"><a className="navbar-brand"><img src={logo}
-                        className="img-thumbnail float-left" alt="bookshare-logo" href="/"/></a></Link>
-                </div>
-                <div className="nav-icons">
-                    <button className="navbar-toggler float-right" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true"
-                        aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse float-right" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                        {/* <li class="nav-item">
-                            <a routerLink="/book/library" class="nav-item nav-link"><button className={styles.navbtn}>Моята
-                                Библиотека</button></a>
-                        </li> */}
-                        {/* Notifications 
-                        ----- */}
-                            <li className="nav-item">
-                                <a className="nav-link px-4 text-dark login" href="/">Влез</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-item nav-link" href="/"><button className="navbtn">Регистрирай
-                                    се</button></a>
-                            </li>
+class Header extends Component {
+
+    constructor(props) {
+        super(props)
+    }
+
+    static contextType = Context
+
+    render () {
+        return (
+            <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow">
+                <div className="row container-fluid">
+                    <div>
+                        <Link to="/" className="navbar-brand"><img src={logo}
+                            className="img-thumbnail float-left" alt="bookshare-logo" href="/"/></Link>
+                    </div>
+                    <div className="nav-icons">
+                        <div className="float-right" id="navbarSupportedContent">
+                            <ul className="navbar-nav mr-auto">
                             {/* <li class="nav-item">
-                                <a class="nav-link nav-item"><img class="logout"
-                                src="assets/static/logout.png" /></a>
+                                <a routerLink="/book/library" class="nav-item nav-link"><button className={styles.navbtn}>Моята
+                                    Библиотека</button></a>
                             </li> */}
-                        </ul>
+                            {/* Notifications 
+                            ----- */}
+                                <li className="nav-item">
+                                    {this.context.loggedIn ? null : <Link to="/login"  className="nav-link px-4 text-dark login">Влез</Link>}
+                                </li>
+                                <li className="nav-item">
+                                    {this.context.loggedIn ? null : <Link to="/register" className="nav-item nav-link" href="/"><button className="navbtn">Регистрирай
+                                        се</button></Link>}
+                                </li>
+                                <li className="nav-item">
+                                    {!this.context.loggedIn ? null : <div onClick={this.context.logOut} className="nav-link nav-item"><img className="logout"
+                                    src={logout} /></div>}
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    );
+            </nav>
+        );
+    }
+
 }
 
 export default Header;
