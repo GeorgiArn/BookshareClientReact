@@ -1,10 +1,10 @@
 import React from 'react'
 import './index.css'
 import template from '../../images/template.jpg'
-import SearchBookEngine from '../search-book-engine'
-import NewestBooks from '../newest-books'
-import MostExchangedBooks from '../most-exchanged-books'
-import Header from '../header'
+import SearchBookEngine from '../../components/search-book-engine'
+import NewestBooks from '../../components/newest-books'
+import MostExchangedBooks from '../../components/most-exchanged-books'
+import Header from '../../components/header'
 
 const Homepage = () => {
     return (
