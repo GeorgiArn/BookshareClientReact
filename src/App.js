@@ -12,19 +12,22 @@ class App extends Component {
 
     this.state = {
       loggedIn: null,
+      accessToken: ''
     }
   }
 
   logIn = () => {
     this.setState({
       loggedIn: true,
+      accessToken: getCookie('x-auth-token')
     })
   }
 
   logOut = () => {
     document.cookie = "x-auth-token= ;"
     this.setState({
-      loggedIn: false
+      loggedIn: false,
+      accessToken: ''
     })
   }
 
@@ -42,6 +45,7 @@ class App extends Component {
   render() {
     const {
       loggedIn,
+      accessToken
     } = this.state
 
     if (loggedIn === null) {
@@ -51,6 +55,7 @@ class App extends Component {
     return (
       <UserContext.Provider value={{
         loggedIn,
+        accessToken,
         logIn: this.logIn,
         logOut: this.logOut
       }}>
