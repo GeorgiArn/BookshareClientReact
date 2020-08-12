@@ -1,0 +1,35 @@
+.add-book-title {
+    white-space: normal;
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.add-book-author {
+    margin-left: 5px;
+    margin-top: -15px;
+    font-size: 13px;
+}
+
+.add-book img {
+    width: 60px;
+    height: 80px;
+    float: left;
+    margin-right: 7px;
+    padding: 2px;
+}
+
+.add-book {
+    overflow: hidden;
+    cursor: pointer;
+    width: 350px
+}
+
+.add-book:hover{
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+}
+
+a:hover {
+    text-decoration: none;
+}

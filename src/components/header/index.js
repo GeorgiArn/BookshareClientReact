@@ -24,12 +24,10 @@ class Header extends Component {
                     <div className="nav-icons">
                         <div className="float-right" id="navbarSupportedContent">
                             <ul className="navbar-nav mr-auto">
-                            {/* <li class="nav-item">
-                                <a routerLink="/book/library" class="nav-item nav-link"><button className={styles.navbtn}>Моята
-                                    Библиотека</button></a>
-                            </li> */}
-                            {/* Notifications 
-                            ----- */}
+                                <li className="nav-item">
+                                    {!this.context.loggedIn ? null : <Link to="/library" className="nav-item nav-link"><button className="navbtn">Моята
+                                        Библиотека</button></Link>}
+                                </li>
                                 <li className="nav-item">
                                     {this.context.loggedIn ? null : <Link to="/login"  className="nav-link px-4 text-dark login">Влез</Link>}
                                 </li>

@@ -6,6 +6,7 @@ import Context from './Context'
 import Homepage from './pages/homepage'
 import Register from './pages/register'
 import Login from './pages/login'
+import Library from './pages/library'
 
 const Navigation = () => {
     const loggedIn = useContext(Context).loggedIn
@@ -18,6 +19,7 @@ const Navigation = () => {
                 <Route path="/book/:id" component={Book}/>
                 <Route path="/login">{loggedIn ? (<Redirect to="/" />) : (<Login />)}</Route>
                 <Route path="/register">{loggedIn ? (<Redirect to="/" />) : (<Register />)}</Route>
+                <Route path="/library">{loggedIn ? (<Library />) : (<Redirect to="/"/>)}</Route>
             </Switch>
         </BrowserRouter>
     )

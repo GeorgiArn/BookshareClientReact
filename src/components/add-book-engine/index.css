@@ -1,0 +1,17 @@
+.add-book-engine {
+    width: 350px;
+}
+
+.add-book-text {
+    color: rgb(206, 112, 5);
+    font-weight: 800;
+    font-size: 18px;
+    margin-top: 45px;
+    margin-bottom: 6px
+}
+
+.searched-books {
+    z-index: 2;
+    position: absolute;
+    background-color: white;
+}

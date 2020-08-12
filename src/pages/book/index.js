@@ -23,20 +23,20 @@ class Book extends Component {
     }
 
     getCurrentUserBasicData = async () => {
-        const response = await fetch(`https://bookshare-rest-api.herokuapp.com/private/current-user-basic-data`, { headers: {
+        const request = await fetch(`https://bookshare-rest-api.herokuapp.com/private/current-user-basic-data`, { headers: {
             'Authorization': `Bearer ${this.context.accessToken}`
         }});
 
-        const user = await response.json()
+        const user = await request.json()
         this.setState({ user })
     }
 
     getBook = async (id) => {
-        const response = await fetch(`https://bookshare-rest-api.herokuapp.com${this.context.loggedIn ? '/private' : ''}/book/${id}`, { headers: {
+        const request = await fetch(`https://bookshare-rest-api.herokuapp.com${this.context.loggedIn ? '/private' : ''}/book/${id}`, { headers: {
             'Authorization': `Bearer ${this.context.accessToken}`
         }});
 
-        const book = await response.json()
+        const book = await request.json()
         this.setState({ book });
     }
 
@@ -51,7 +51,7 @@ class Book extends Component {
     requestBook = async () => {
         const bookId = this.state.book.id;
         try {
-            const promise = await fetch(`https://bookshare-rest-api.herokuapp.com/private/book-request`, { 
+            await fetch(`https://bookshare-rest-api.herokuapp.com/private/book-request`, { 
                 method: 'POST',
                 body: JSON.stringify({ bookId }),
                 headers: {
