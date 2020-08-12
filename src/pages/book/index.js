@@ -81,7 +81,7 @@ class Book extends Component {
                 <p className="book-owners">Потребители, които предлагат тази книга: <span
                 className="book-owners-span">{ book.users.length }</span></p>
                 ) : null }
-                {(book.users && book.users.length > 1) && user.requests && !this.isOwner() ? (
+                {(book.users && book.users.length > 0) && user.requests && !this.isOwner() ? (
                     <div>
                         {(!this.isRequested() ? (
                         <button className="book-navbtn" onClick={this.requestBook} >Поискай</button>
