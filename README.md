@@ -21,7 +21,7 @@ The client side consists of different react components distributed in pages (whi
 - Authorized user
 - User has access to his own library in which he can add new books
 - User can request a book from other users
-- User can accept a book request from other users
+- User can accept book requests from other users
 - User can access request info page
 - User has all of the anonymous user privileges except accessing register and login page
 ```
