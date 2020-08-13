@@ -4,6 +4,7 @@ import logo from '../../images/logo.png'
 import logout from '../../images/logout.png'
 import { Link } from 'react-router-dom'
 import Context from '../../Context'
+import Notifications from '../notifications'
 
 class Header extends Component {
 
@@ -27,6 +28,9 @@ class Header extends Component {
                                 <li className="nav-item">
                                     {!this.context.loggedIn ? null : <Link to="/library" className="nav-item nav-link"><button className="navbtn">Моята
                                         Библиотека</button></Link>}
+                                </li>
+                                <li className="nav-item">
+                                    {!this.context.loggedIn ? null : <Notifications/>}
                                 </li>
                                 <li className="nav-item">
                                     {this.context.loggedIn ? null : <Link to="/login"  className="nav-link px-4 text-dark login">Влез</Link>}

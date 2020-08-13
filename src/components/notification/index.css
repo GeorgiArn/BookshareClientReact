@@ -1,0 +1,10 @@
+.request {
+    padding: 5px;
+    border-left: rgb(224, 224, 224) 0.5px solid;
+    border-right: rgb(224, 224, 224) 0.5px solid;
+    border-top: rgb(224, 224, 224) 0.5px solid;
+}
+
+.request:hover {
+    background-color: whitesmoke;
+}

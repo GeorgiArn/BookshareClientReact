@@ -54,7 +54,7 @@ class Library extends Component {
                         </div>
                         ) : (
                         <div className="row text-center d-flex justify-content-center">
-                            <p class="msg">Все още нямаш книги в библиoтеката ти.</p>
+                            <p className="msg">Все още нямаш книги в библиoтеката ти.</p>
                         </div>
                         )}
                     </div>
