@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './index.css'
+import { Link } from 'react-router-dom';
 
 class Notification extends Component {
     constructor(props) {
@@ -16,9 +17,11 @@ class Notification extends Component {
         return (
             <div key={notification.id}>
                 {this.isReceiver(notification) && notification.isAccepted ? (
-                <div className="request">
-                    <p>{notification.requester.firstName} ти поиска "{notification.requestedBook.title}". Избери си една от неговите книги.</p>
-                </div>) : null}
+                    <Link to={"/request/"+notification.id}>
+                        <div className="request">
+                            <p>{notification.requester.firstName} ти поиска "{notification.requestedBook.title}". Избери си една от неговите книги.</p>
+                        </div>
+                    </Link>) : null}
 
                 {this.isReceiver(notification) && !notification.isAccepted ? (
                 <div className="request">
@@ -26,9 +29,11 @@ class Notification extends Component {
                 </div>) : null}
 
                 {!this.isReceiver(notification) && notification.isAccepted ? (
-                    <div className="request">
-                        <p>Твоята заявка за "{notification.requestedBook.title}" беше приета от {notification.receiver.firstName}, който поиска "{notification.chosenBook.title}".</p>
-                </div>) : null}
+                    <Link to={"/request/"+notification.id}>
+                        <div className="request">
+                            <p>Твоята заявка за "{notification.requestedBook.title}" беше приета от {notification.receiver.firstName}, който поиска "{notification.chosenBook.title}".</p>
+                        </div>
+                    </Link>) : null}
             </div> 
         )
     }

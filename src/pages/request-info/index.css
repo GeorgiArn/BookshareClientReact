@@ -1,0 +1,11 @@
+.request-info-book {
+    height: 440px;
+    width: auto;
+}
+
+@media only screen and (max-width: 575px){
+.lastdiv {
+    margin-top: 1rem;
+    margin-bottom: calc(80px + 1rem);
+}
+}
