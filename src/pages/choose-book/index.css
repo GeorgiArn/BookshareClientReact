@@ -1,0 +1,39 @@
+.choose-books {
+    margin-top: 20px;
+}
+
+.choose-book {
+    margin: 20px;
+    position: relative;
+    border: white 3px solid;
+    padding: 7px;
+}
+
+.choose-book-img {
+    width: 150px;
+    height: 200px;
+    margin-top: 15px;
+}
+
+.choose-book-author {
+    white-space: normal;
+    font-size: 13px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.choose-book-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 5px;
+    line-height: 16px;
+}
+
+.choose-library-title {
+    color: #F68D16;
+}
+
+.choose-book:hover {
+    background-color: rgb(218, 218, 218);
+    cursor: pointer;
+}

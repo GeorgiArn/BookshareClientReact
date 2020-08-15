@@ -58,7 +58,7 @@ class RequestInfo extends Component {
                 ) : (<h2 className="text-center text-dark py-4">Поздравления! Вие разменихте "{request.chosenBook.title}" за "{request.requestedBook.title}"!</h2>)}
                 
                 <div className="row m-0 pt-5">
-                    <div class="col-md-6 col-xs-12 my-3 col-lg-4 col-sm-6 d-flex justify-content-center">
+                    <div className="col-md-6 col-xs-12 my-3 col-lg-4 col-sm-6 d-flex justify-content-center">
                         <img className="img-responsive fit-image shadow request-info-book"
                             src={request.requestedBook.imageURL} />
                     </div>

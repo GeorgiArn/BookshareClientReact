@@ -8,8 +8,9 @@ import Register from './pages/register'
 import Login from './pages/login'
 import Library from './pages/library'
 import RequestInfo from './pages/request-info'
+import ChooseBook from './pages/choose-book'
 
-const Navigation = () => {
+const Navigation = (props) => {
     const loggedIn = useContext(Context).loggedIn
 
     return (
@@ -22,6 +23,7 @@ const Navigation = () => {
                 <Route path="/register">{loggedIn ? (<Redirect to="/" />) : (<Register />)}</Route>
                 <Route path="/library">{loggedIn ? (<Library />) : (<Redirect to="/"/>)}</Route>
                 <Route path="/request/:id">{loggedIn ? (<RequestInfo />) : (<Redirect to="/"/>)}</Route>
+                <Route path="/choose/:id">{loggedIn ? ((props) => <ChooseBook {...props}/>) : (<Redirect to="/"/>)}</Route>
             </Switch>
         </BrowserRouter>
     )

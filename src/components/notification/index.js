@@ -17,19 +17,21 @@ class Notification extends Component {
         return (
             <div key={notification.id}>
                 {this.isReceiver(notification) && notification.isAccepted ? (
-                    <Link to={"/request/"+notification.id}>
+                    <Link to={"/request/" + notification.id}>
                         <div className="request">
                             <p>{notification.requester.firstName} ти поиска "{notification.requestedBook.title}". Избери си една от неговите книги.</p>
                         </div>
                     </Link>) : null}
 
                 {this.isReceiver(notification) && !notification.isAccepted ? (
-                <div className="request">
-                    <p>{notification.requester.firstName} ти поиска "{notification.requestedBook.title}". Избери си една от неговите книги.</p>
-                </div>) : null}
+                    <Link to={"/choose/" + notification.id}>
+                        <div className="request">
+                            <p>{notification.requester.firstName} ти поиска "{notification.requestedBook.title}". Избери си една от неговите книги.</p>
+                        </div>
+                    </Link>) : null}
 
                 {!this.isReceiver(notification) && notification.isAccepted ? (
-                    <Link to={"/request/"+notification.id}>
+                    <Link to={"/request/" + notification.id}>
                         <div className="request">
                             <p>Твоята заявка за "{notification.requestedBook.title}" беше приета от {notification.receiver.firstName}, който поиска "{notification.chosenBook.title}".</p>
                         </div>

@@ -32,6 +32,7 @@ class Book extends Component {
     }
 
     getBook = async (id) => {
+        console.log('here');
         const request = await fetch(`https://bookshare-rest-api.herokuapp.com${this.context.loggedIn ? '/private' : ''}/book/${id}`, { headers: {
             'Authorization': `Bearer ${this.context.accessToken}`
         }});
@@ -49,6 +50,7 @@ class Book extends Component {
     }
 
     requestBook = async () => {
+        
         const bookId = this.state.book.id;
         try {
             await fetch(`https://bookshare-rest-api.herokuapp.com/private/book-request`, { 
@@ -73,7 +75,7 @@ class Book extends Component {
             <div className="container-fluid padding" >
             <div className="row text-center d-flex justify-content-center book-detail">
                 <div className="col-md-4">
-                    <img className="book-img" src={book.imageURL} />
+                    <img className="book-img" src={book.imageURL} /> 
                     <p className="book-author">Автор: <span className="book-author-span">{book.author}</span></p>
                     <p className="book-date">Дата на издаване: <span className="book-date-span">{book.datePublished}</span></p>
                     <p className="book-publisher">Издателство: <span className="book-publisher-span">{book.publisher}</span></p>
