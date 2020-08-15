@@ -44,7 +44,8 @@ class Login extends Component {
     render() {
         const {
             username,
-            password
+            password,
+            error
         } = this.state
 
         return (
@@ -57,6 +58,7 @@ class Login extends Component {
                             <form onSubmit={this.handleSubmit}>
                                 <input name="username" value={username} type="email" placeholder="Имейл" className="form-control mt-4" onChange={this.changeFieldValue} required />
                                 <input name="password" value={password} type="password" placeholder="Парола" className="form-control mt-3" onChange={this.changeFieldValue} required />
+                                {error ? (<p>Невалидни данни!</p>) : null}
                                 <div className="form-row text-center">
                                     <div className="col-12">
                                         <button className="btn btn-dark text-center mt-3 btnlog">Влез</button>

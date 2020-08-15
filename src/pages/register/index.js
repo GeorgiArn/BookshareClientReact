@@ -12,9 +12,9 @@ class Register extends Component {
             firstName: '',
             lastName: '',
             password: '',
-            repeatPassword: '',
             phoneNumber: '',
-            address: ''
+            address: '',
+            fieldError: false
         }
     }
 
@@ -22,9 +22,16 @@ class Register extends Component {
 
     changeFieldValue = event => {
         const newState = {}
-        newState[event.target.name] = event.target.value
 
+        newState[event.target.name] = event.target.value
         this.setState(newState)
+
+        if (event.target.value.match(/^[A-Za-z0-9_@.]{3,13}$/)) {
+            this.setState({fieldError: false});
+        } else {
+            this.setState({fieldError: true});
+        }
+
     }
 
     handleSubmit = async (event) => {
@@ -71,9 +78,9 @@ class Register extends Component {
             lastName,
             email,
             password,
-            repeatPassword,
             phoneNumber,
-            address
+            address,
+            fieldError
         } = this.state
 
         return (
@@ -94,7 +101,6 @@ class Register extends Component {
                                         </div>
                                         <input name="email" type="email" value={email} placeholder="Имейл" className="form-control mt-3" onChange={this.changeFieldValue} required />
                                         <input name="password" type="password" value={password} placeholder="Парола" className="form-control mt-3" onChange={this.changeFieldValue} required />
-                                        <input name="repeatPassword" type="password" value={repeatPassword} placeholder="Повтори Парола" className="form-control my-3" onChange={this.changeFieldValue} required />
                                         <input name="phoneNumber" type="text" value={phoneNumber} placeholder="Телефонен номер" className="form-control my-3" onChange={this.changeFieldValue} required />
                                         <input name="address" type="text" value={address} placeholder="Адрес, на който желаеш да получаваш книгите" className="form-control my-3" onChange={this.changeFieldValue} required />
                                         <div className="form-row text-center">

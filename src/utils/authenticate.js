@@ -11,11 +11,11 @@ const authenticate = async (url, body, onSuccess, onFailure) => {
         const response = await promise.json()
 
         const accessToken = response['access_token']
-        document.cookie = `x-auth-token=${accessToken}`
 
         if (!accessToken) {
             onFailure()
         } else {
+            document.cookie = `x-auth-token=${accessToken}`
             onSuccess()
         }
     } catch (e) {
