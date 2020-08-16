@@ -26,7 +26,7 @@ class Register extends Component {
         newState[event.target.name] = event.target.value
         this.setState(newState)
 
-        if (event.target.value.match(/^[A-Za-z0-9_@.]{3,13}$/)) {
+        if (event.target.value.match(/^.{3,30}/)) {
             this.setState({fieldError: false});
         } else {
             this.setState({fieldError: true});
@@ -46,30 +46,34 @@ class Register extends Component {
 
         event.preventDefault()
 
-        await fetch('https://bookshare-rest-api.herokuapp.com/register', {
-            method: 'POST',
-            body: JSON.stringify({
-                email,
-                password,
-                firstName,
-                lastName,
-                phoneNumber,
-                address
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+        try {
+            await fetch('https://bookshare-rest-api.herokuapp.com/register', {
+                method: 'POST',
+                body: JSON.stringify({
+                    email,
+                    password,
+                    firstName,
+                    lastName,
+                    phoneNumber,
+                    address
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
 
-        await authenticate('https://bookshare-rest-api.herokuapp.com/oauth/v2/token', { 
-            username: email,
-            password,
-            grant_type: "password",
-            client_id: "2_4",
-            client_secret: "4"
-        }, (() => {
-            this.context.logIn()
-        }), (() => this.setState({ error: true })))
+            await authenticate('https://bookshare-rest-api.herokuapp.com/oauth/v2/token', { 
+                username: email,
+                password,
+                grant_type: "password",
+                client_id: "2_4",
+                client_secret: "4"
+            }, (() => {
+                this.context.logIn()
+            }), (() => this.setState({ error: true })))
+        } catch (e) {
+            alert('Имейлът е зает!')
+        }
     }
 
     render() {
@@ -103,6 +107,7 @@ class Register extends Component {
                                         <input name="password" type="password" value={password} placeholder="Парола" className="form-control mt-3" onChange={this.changeFieldValue} required />
                                         <input name="phoneNumber" type="text" value={phoneNumber} placeholder="Телефонен номер" className="form-control my-3" onChange={this.changeFieldValue} required />
                                         <input name="address" type="text" value={address} placeholder="Адрес, на който желаеш да получаваш книгите" className="form-control my-3" onChange={this.changeFieldValue} required />
+                                        {fieldError ? (<p>Полето трябва да съдържа поне три символа.</p>) : null}
                                         <div className="form-row text-center">
                                             <div className="col-12">
                                                 <button className="btn btn-dark text-center mt-3 btnreg">Регистрирай се</button>
